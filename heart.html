@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+    <style>
+        body {
+            animation: background-color;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes background-color {
+            0% {
+                background-color: rgb(252, 194, 238);
+            }
+
+            25% {
+                background-color: rgb(253, 222, 246);
+            }
+
+            50% {
+                background-color: rgb(255, 198, 243);
+            }
+
+            75% {
+                background-color: rgb(255, 177, 238);
+            }
+
+            100% {
+                background-color: rgb(255, 188, 246);
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+
+        @keyframes heart-bit {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+
+            50% {
+                transform: scale(.8) rotate(-45deg);
+            }
+
+
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+        }
+
+        .heart {
+            width: 80px;
+            height: 80px;
+            background-color: rgb(255, 85, 113);
+            position: relative;
+            transform: rotate(-45deg);
+            animation: heart-bit;
+            animation-duration: 2.5s;
+            animation-iteration-count: infinite;
+        }
+
+        .heart::before {
+            content: "";
+            position: absolute;
+            background-color: rgb(255, 85, 113);
+            padding: 40.2px;
+            border-radius: 50%;
+            left: 40px;
+        }
+
+        .heart::after {
+            content: "";
+            padding: 40.2px;
+            position: absolute;
+            bottom: 40px;
+            background-color: rgb(255, 85, 113);
+            border-radius: 50%;
+        }
+
+        .shadow {
+            width: 80%;
+            height: 20px;
+            margin: 30px auto;
+            background-color: rgb(63, 60, 60);
+            box-shadow: 0 0 15px rgb(24, 24, 24);
+            position: absolute;
+            transform: rotateX(50deg);
+            border-radius: 50%;
+            top: 120px;
+            position: absolute;
+            animation: size-change;
+            animation-duration: 2.5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes size-change {
+            0% {
+                width: 80%;
+                height: 20px;
+                top: 120px;
+            }
+
+
+
+            50% {
+                width: 65%;
+                height: 20px;
+                top: 115px;
+            }
+
+
+
+            100% {
+                width: 80%;
+                height: 20px;
+                top: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <div class="shadow"></div>
+    </div>
+    <audio autoplay loop>
+        <source src="https://musicfeed.ir/files/2020/03/Surf-Mesa-ily-Emilee-Flood-musicfeed.ir_128.mp3"
+            type="audio/mp3">
+    </audio>
+</body>
+
+</html>
